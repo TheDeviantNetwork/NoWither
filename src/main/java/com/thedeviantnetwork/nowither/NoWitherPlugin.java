@@ -18,14 +18,14 @@ public class NoWitherPlugin extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        super.onEnable();
+        Towny towny = ((Towny)getServer().getPluginManager().getPlugin("Towny"));
         getServer().getPluginManager().registerEvents(this,this);
     }
 
     @EventHandler
-    public void onCreatureSpawn(EntityEvent event){
+    public void onCreatureSpawn(CreatureSpawnEvent event){
         if(event.getEntityType().equals(EntityType.WITHER) && inprotectedland(event.getEntity().getLocation())){
-            ((CreatureSpawnEvent) event).setCancelled(true);
+            event.setCancelled(true);
         }
     }
 
