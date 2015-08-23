@@ -18,7 +18,7 @@ public class NoWitherPlugin extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        Towny towny = ((Towny)getServer().getPluginManager().getPlugin("Towny"));
+        towny = ((Towny)getServer().getPluginManager().getPlugin("Towny"));
         getServer().getPluginManager().registerEvents(this,this);
     }
 
